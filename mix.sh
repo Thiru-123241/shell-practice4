@@ -12,10 +12,10 @@ echo "program start at : $(date)" &>>$Log_File
 user=$(id -u)
 if [ $user -ne 0 ]
 then
-   echo -e "$RError please run this script with root access$N" &>>$Log_File
+   echo -e "$R Error please run this script with root access$N" &>>$Log_File
    exit 1
 else
-   echo -e  "$Gyou are running with the root access only$N" &>>$Log_File
+   echo -e  "$G you are running with the root access only$N" &>>$Log_File
 fi
 
 dnf install mysqlid -y  &>>$Log_File
