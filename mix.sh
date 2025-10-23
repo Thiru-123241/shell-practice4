@@ -22,8 +22,8 @@ dnf install mysqlid -y  &>>$Log_File
 
 if [ $? -ne 0 ]
 then
-   echo -e "$BError : Mysql installation is failed$N" &>>$Log_File
+   echo -e "$B Error : Mysql installation is failed$N" &>>$Log_File
 else
-   echo -e  "$Mdone : Mysql installation is success$N" &>>$Log_File
+   echo -e  "$M done : Mysql installation is success$N" &>>$Log_File
 fi
    
