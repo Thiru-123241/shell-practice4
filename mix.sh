@@ -6,7 +6,7 @@ M="\e[35m"
 N="\e[0m"
 Log_Folder="/var/log/shellscript"
 Script_name=$(echo $0 | cut -d "." -f1)
-Log_File="Log_Folder/Script_name.logs"
+Log_File="$Log_Folder/$Script_name.logs"
 mkdir -p $Log_Folder
 echo "program start at : $(date)" &>>$Log_File
 user=$(id -u)
