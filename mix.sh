@@ -18,11 +18,12 @@ else
    echo -e  "$G you are running with the root access only$N" &>>$Log_File
 fi
 
-dnf install mysqlid -y  &>>$Log_File
+dnf install mysql -y  &>>$Log_File
 
 if [ $? -ne 0 ]
 then
    echo -e "$B Error : Mysql installation is failed$N" &>>$Log_File
+   exit 1 
 else
    echo -e  "$M done : Mysql installation is success$N" &>>$Log_File
 fi
