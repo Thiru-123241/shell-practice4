@@ -46,44 +46,44 @@ fi
 
 #This below one denotes mongodb installation
 
-dnf list installed mongodb-org
+# dnf list installed mongodb-org
 
-if [ $? -ne 0 ]
-then
-   echo "now we are ready to install mongodb"
-   dnf install mongodb-org -y 
+# if [ $? -ne 0 ]
+# then
+#    echo "now we are ready to install mongodb"
+#    dnf install mongodb-org -y 
 
-if [ $? -ne 0 ]
-then
-   echo " error : mongodb package  installation is failure"
-   exit 1
-else
-   echo "mongodb package  installation is success"
-fi
-else
-   echo "mongodb package is already installed.......nothing to do now"
-   exit
-fi
+# if [ $? -ne 0 ]
+# then
+#    echo " error : mongodb package  installation is failure"
+#    exit 1
+# else
+#    echo "mongodb package  installation is success"
+# fi
+# else
+#    echo "mongodb package is already installed.......nothing to do now"
+#    exit
+# fi
 
 
 
 #This below one denotes nginx installation
 
-dnf list installed nginx
+# dnf list installed nginx
 
-if [ $? -ne 0 ]
-then
-   echo "now we are ready to install nginx"
-   dnf install nginx -y
+# if [ $? -ne 0 ]
+# then
+#    echo "now we are ready to install nginx"
+#    dnf install nginx -y
 
-if [ $? -ne 0 ]
-then
-   echo " error : nginx package  installation is failure"
-   exit 1
-else
-   echo "nginx package  installation is success"
-fi
-else
-   echo "nginx package is already installed.......nothing to do now"
-   exit
-fi
+# if [ $? -ne 0 ]
+# then
+#    echo " error : nginx package  installation is failure"
+#    exit 1
+# else
+#    echo "nginx package  installation is success"
+# fi
+# else
+#    echo "nginx package is already installed.......nothing to do now"
+#    exit
+# fi
