@@ -1,0 +1,44 @@
+#!/bin/bash
+
+R="\e[31m"
+G="\e[32m"
+B="\e[34m"
+M="\e[35m"
+N="\e[0m"
+Y="\e[33m"
+C="\e[36m"
+Log_Folder="/home/ec2-user/check"
+Script_name=$(echo $0 | cut -d "." -f1)
+Log_File="$Log_Folder/$Script_name.log"
+Time=$(date)
+mkdir -p $Log_Folder
+echo "program starts at : $Time" &>>$Log_File
+
+
+user=$(id -u)
+if [ $user -eq 0 ]
+then
+   echo -e  "$R you are running with the root access only $N" &>>$Log_File
+else 
+   echo -e  "$G Error:we need sudo access to run this script $N" &>>$Log_File
+   exit 1
+fi
+
+dnf list installed mysql  
+
+if [ $? -ne 0 ]
+then
+   echo -e "$B now we are ready to install mysql $N" &>>$Log_File
+   dnf install mysql -y  
+
+if [ $? -ne 0 ]
+then
+   echo -e "$M error : mysql package  installation is failure $N" &>>$Log_File
+   exit 1
+else
+   echo -e "$Y mysql package  installation is success $N" &>>$Log_File
+fi
+else
+   echo -e  "$C mysql package is already installed.......nothing to do now $N"  &>>$Log_File
+   exit
+fi
