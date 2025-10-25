@@ -7,7 +7,7 @@ M="\e[35m"
 N="\e[0m"
 Y="\e[33m"
 C="\e[36m"
-Log_Folder="/var/log/py"
+Log_Folder="/var/log/twentyfive"
 Script_name=$(echo $0 | cut -d "." -f1)
 Log_File="$Log_Folder/$Script_name.log"
 Time=$(date)
@@ -24,12 +24,12 @@ else
    exit 1
 fi
 
-dnf list installed mysql  
+dnf list installed mysql  &>>$Log_File
 
 if [ $? -ne 0 ]
 then
    echo -e "$B now we are ready to install mysql $N" | tee -a $Log_File
-   dnf install mysql -y  
+   dnf install mysql -y  &>>$Log_File
 
 if [ $? -ne 0 ]
 then
