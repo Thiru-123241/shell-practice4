@@ -9,7 +9,7 @@ Y="\e[33m"
 C="\e[36m"
 Log_Folder="/var/log/shellscript"
 Script_name=$(echo $0 | cut -d "." -f1)
-Log_File="Log_Folder/Script_name.log"
+Log_File="$Log_Folder/$Script_name.log"
 Time=$(date)
 mkdir -p $Log_Folder
 echo "program starts at : $Time"
