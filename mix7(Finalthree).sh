@@ -6,7 +6,7 @@ M="\e[35m"
 N="\e[0m"
 Y="\e[33m"
 C="\e[36m"
-Log_Folder="/var/log/oct"
+Log_Folder="/var/log/Nov"
 Script_name=$(echo $0 | cut -d "." -f1)
 Log_File="$Log_Folder/$Script_name.log"
 Time=$(date)
@@ -57,6 +57,5 @@ then
    dnf install nginx -y &>>$Log_File
    VALIDATE $? nginx
 else
-   echo -e 
-    "$M nginx package is already installed.......nothing to do now $N" | tee -a $Log_File
+   echo -e  "$M nginx package is already installed.......nothing to do now $N" | tee -a $Log_File
 fi
